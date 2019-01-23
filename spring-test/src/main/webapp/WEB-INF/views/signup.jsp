@@ -8,7 +8,7 @@
 <script src="//code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
-	<form action="<%= request.getContextPath() %>/signup" id="form">
+	<form action="<%= request.getContextPath() %>/signup" method="post" id="form">
 		<input type="text" name="id" id="id">
 		<button id="dup" type="button">중복체크</button>
 		<br> <input type="password" name="pw"><br> <input
