@@ -6,6 +6,9 @@ public class AccountVo {
 	private String id;
 	private String pw;
 	private String email;
+	private String gender;
+	private Date registered_date;
+	private String authority;
 	public String getId() {
 		return id;
 	}
@@ -42,10 +45,6 @@ public class AccountVo {
 	public void setAuthority(String authority) {
 		this.authority = authority;
 	}
-	private String gender;
-	private Date registered_date;
-	private String authority;
-	
 	@Override
 	public String toString() {
 		return "AccountVo [id=" + id + ", pw=" + pw + ", email=" + email + ", gender=" + gender + ", registered_date="
