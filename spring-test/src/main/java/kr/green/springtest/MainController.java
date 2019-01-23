@@ -38,4 +38,16 @@ public class MainController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public String signupGet(Model model) {
+		return "signup";
+	}
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public String signupPost(Model model, AccountVo userInfo) {
+		boolean isUser = accountService.signup(userInfo);
+		if(isUser)
+		return "redirect:/";
+	return "redirect:/signup";
+	}
+	
 }

@@ -25,4 +25,14 @@ public class AccountServiceImp implements AccountService {
 		return null;
 	}
 
+	@Override
+	public boolean signup(AccountVo userInfo) {
+		if(accountDao.getAccount(userInfo.getId()) != null) //아이디가 있으면 가입 x
+			return false;
+		String encPw = passwordEncoder.encode(userInfo.getPw());
+		userInfo.setPw(encPw);
+		accountDao.setAccount(userInfo);
+		return true;
+	}
+
 }
