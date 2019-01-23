@@ -19,7 +19,7 @@ public class AccountServiceImp implements AccountService {
 	@Override
 	public AccountVo signin(AccountVo loginInfo) {
 		AccountVo user = accountDao.getAccount(loginInfo.getId()); //패스워드는 암호화돼서
-		if(passwordEncoder.matches(loginInfo.getPw(),
+		if(user != null && passwordEncoder.matches(loginInfo.getPw(),
 				user.getPw()))
 			return user;
 		return null;
