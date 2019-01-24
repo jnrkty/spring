@@ -6,6 +6,9 @@
 	<select id="getBoards" resultType="kr.green.springtest.vo.BoardVo">
 		select * from board order by id desc
 	</select>
-
+	<insert id="setBoard">
+		insert into board(title, content, writer)
+			values(#{board.title},#{board.content},#{board.writer})
+	</insert>
 	
 </mapper>

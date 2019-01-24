@@ -18,4 +18,11 @@ public class BoardServiceImp implements BoardService{
 		return boardDao.getBoards();
 	}
 
+	@Override
+	public void registerBoard(BoardVo board) {
+		// TODO Auto-generated method stub
+		boardDao.setBoard(board);
+		
+	}
+
 }
