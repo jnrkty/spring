@@ -21,6 +21,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 
 		if(user == null) {
 			response.sendRedirect(request.getContextPath()+"/");
+			return false;
 		}
 		return true;
 	}
