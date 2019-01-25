@@ -9,6 +9,14 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.css">
 </head>
 <body>
+	<c:choose> <%-- 자바에서의 if else 기능이랑 똑같다--%>
+		<c:when test="${user != null}">
+			<a href="<%=request.getContextPath()%>/signout">로그아웃</a>
+		</c:when>
+		<c:otherwise>
+			<a href="<%=request.getContextPath()%>/">로그인</a>
+		</c:otherwise>
+	</c:choose>
 	<table class="table">
 		<tr>
 			<td>번호</td>

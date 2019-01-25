@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +63,12 @@ public class MainController {
 		boolean dup = accountService.isDuplicated(id);
 		map.put("dup",dup);
 		return map;
-		
+	}
+	@RequestMapping(value = "/signout", method = RequestMethod.GET)
+	public String signoutGet(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("user");
+		return "redirect:/bbs/list";
 	}
 	
 }
