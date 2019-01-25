@@ -5,18 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.css">
 <script src="//code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
 	<form action="<%= request.getContextPath() %>/signup" method="post" id="form">
-		<input type="text" name="id" id="id">
-		<button id="dup" type="button">중복체크</button>
-		<br> <input type="password" name="pw"><br> <input
-			type="email" name="email"><br> <input type="radio"
-			name="gender" value="male" id="male" checked> <label
-			for="male">남성</label> <input type="radio" name="gender"
-			value="female" id="female"> <label for="female">여성</label><br>
-		<button type="button" id="btnOk">회원가입</button>
+		<input type="text" name="id" id="id" class="form-control">
+		<button id="dup" type="button" class="btn btn-warning">중복체크</button>
+		<br> <input type="password" name="pw" class="form-control"><br>
+			<input type="email" name="email"><br> <input type="radio" name="gender" value="male" id="male" checked>
+				<label for="male">남성</label>
+			<input type="radio" name="gender" value="female" id="female">
+		 		<label for="female">여성</label><br>
+		<button type="button" id="btnOk" class="btn btn-success">회원가입</button>
 
 	</form>
 	<script type="text/javascript">
